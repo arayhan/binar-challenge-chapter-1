@@ -10,7 +10,38 @@
 </head>
 
 <body>
-    <h1 class="text-3xl font-bold underline bg-danger"> Hello world! </h1>
+    <header>
+        <div class="container">
+            <div class="flex justify-between py-5">
+                <div class="text-xl font-semibold">
+                    <a class="font-brand" href="#">BCR</a>
+                </div>
+                <nav class="flex items-center space-x-8 font-semibold">
+                    <a href="#">Our Services</a>
+                    <a href="#">Why Us</a>
+                    <a href="#">Testimonial</a>
+                    <a href="#">FAQ</a>
+                    <a href="#" class="btn-primary">Register</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="sideMenu" class="fixed top-0 left-0 w-full h-screen">
+        <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50" />
+        <div class="fixed right-0 top-0 w-64 h-full bg-white px-6 py-10 space-y-6">
+            <div class="flex justify-between items-center">
+                <a class="font-bold" href="#">BCR</a>
+                <img class="hover:cursor-pointer" src="./images/icons/fi_x.png" alt="">
+            </div>
+            <div class="flex flex-col items-start space-y-4">
+                <a class="font-semibold" href="#">Our Services</a>
+                <a class="font-semibold" href="#">Why Us</a>
+                <a class="font-semibold" href="#">Testimonial</a>
+                <a class="font-semibold" href="#">FAQ</a>
+                <a href="#" class="btn-primary">Register</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
