@@ -14,4 +14,11 @@
 	.btn-primary {
 		@apply inline-block py-3 px-5 bg-secondary text-white font-semibold rounded-sm hover:bg-secondary-600 transition-all;
 	}
+
+	ul.services-list {
+		list-style-image: url("../images/check.png");
+	}
+
+	ul.services-list li {
+	}
 }
