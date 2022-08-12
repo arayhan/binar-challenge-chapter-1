@@ -15,10 +15,11 @@
 		@apply inline-block py-3 px-5 bg-secondary text-white font-semibold rounded-sm hover:bg-secondary-600 transition-all;
 	}
 
-	ul.services-list {
-		list-style-image: url("../images/check.png");
+	section .section-title {
+		@apply text-3xl font-bold mb-6;
 	}
 
-	ul.services-list li {
+	ul.services-list {
+		list-style-image: url("../images/check.png");
 	}
 }
