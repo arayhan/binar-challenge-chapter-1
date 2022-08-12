@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ahmed Rayhan Primadedas : Binar Academy Chapter 1 Challenge</title>
     <link rel="stylesheet" href="./styles/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
 
 <body>
@@ -21,7 +22,7 @@
                     <a href="#">Why Us</a>
                     <a href="#">Testimonial</a>
                     <a href="#">FAQ</a>
-                    <a href="#" class="btn-primary">Register</a>
+                    <a href="#" class="btn-secondary">Register</a>
                 </nav>
                 <div class="block md:hidden cursor-pointer">
                     <img src="images/feather-icons/fi_menu.png" alt="">
@@ -41,7 +42,7 @@
                 <a class="font-semibold" href="#">Why Us</a>
                 <a class="font-semibold" href="#">Testimonial</a>
                 <a class="font-semibold" href="#">FAQ</a>
-                <a href="#" class="btn-primary">Register</a>
+                <a href="#" class="btn-secondary">Register</a>
             </div>
         </div>
     </div>
@@ -53,7 +54,7 @@
                         (Lokasimu) </div>
                     <p>Selamat datang di Binar Car Rental. Kami menyediakan mobil kualitas terbaik dengan harga
                         terjangkau. Selalu siap melayani kebutuhanmu untuk sewa mobil selama 24 jam.</p>
-                    <button class="btn-primary">Mulai Sewa Mobil</button>
+                    <button class="btn-secondary">Mulai Sewa Mobil</button>
                 </div>
                 <div class="w-full lg:w-1/2 lg:absolute right-0 bottom-0">
                     <img class="w-full" src="./images/img_car.png" alt="mercedes benz">
@@ -136,7 +137,7 @@
                 <h1 class="section-title">Testimonial</h1>
                 <p>Berbagai review positif dari para pelanggan kami</p>
             </div>
-            <div>
+            <div class="space-y-6">
                 <div class="flex items-center space-x-8 bg-primary-50 px-10 py-14 rounded-lg">
                     <img src="./images/avatars/img_photo.png" alt="">
                     <div class="space-y-4">
@@ -153,9 +154,20 @@
                         <div class="font-bold">John Dee 32, Bromo</div>
                     </div>
                 </div>
+                <div class="flex justify-center space-x-6">
+                    <div class="text-sm inline-block border p-2 rounded-full cursor-pointer">
+                        <i data-feather="chevron-left"></i>
+                    </div>
+                    <div class="bg-secondary text-white text-sm inline-block p-2 rounded-full cursor-pointer">
+                        <i data-feather="chevron-right"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <script>
+        feather.replace()
+    </script>
 </body>
 
 </html>

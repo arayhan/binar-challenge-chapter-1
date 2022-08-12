@@ -11,7 +11,7 @@
 		@apply font-primary;
 	}
 
-	.btn-primary {
+	.btn-secondary {
 		@apply inline-block py-3 px-5 bg-secondary text-white font-semibold rounded-sm hover:bg-secondary-600 transition-all;
 	}
 
