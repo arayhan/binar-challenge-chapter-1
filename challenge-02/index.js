@@ -72,6 +72,26 @@ console.log("\n===========================");
 console.log("SOAL 5");
 console.log("===========================");
 
+const getSplitName = (personName) => {
+    if (typeof personName !== "string") return "ERROR: Invalid Data Type";
+
+    const splitted = personName.split(" ");
+
+    if (splitted.length > 3) return "ERROR: This function is only for 3 characters name";
+
+    return {
+        firstName: splitted[0],
+        middleName: splitted.length > 2 ? splitted[1] : null,
+        lastName: splitted.length === 3 ? splitted[2] : null,
+    };
+};
+
+console.log(getSplitName("Aldi Daniela Pranata"));
+console.log(getSplitName("Dwi Kuncoro"));
+console.log(getSplitName("Aurora"));
+console.log(getSplitName("Aurora Aureliya Sukma Darma"));
+console.log(getSplitName(0));
+
 console.log("\n===========================");
 console.log("SOAL 6");
 console.log("===========================");
