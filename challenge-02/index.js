@@ -96,6 +96,17 @@ console.log("\n===========================");
 console.log("SOAL 6");
 console.log("===========================");
 
+const getAngkaTerbesarKedua = (dataNumbers) => {
+    if (dataNumbers === undefined) return "ERROR: Bro where is the parameter?";
+    else if (typeof dataNumbers !== "object") return "ERROR: Invalid data type";
+
+    return dataNumbers.sort((a, b) => b - a)[1];
+};
+
+console.log(getAngkaTerbesarKedua([9, 4, 7, 7, 4, 3, 2, 2, 8]));
+console.log(getAngkaTerbesarKedua(0));
+console.log(getAngkaTerbesarKedua());
+
 console.log("\n===========================");
 console.log("SOAL 7");
 console.log("===========================");
