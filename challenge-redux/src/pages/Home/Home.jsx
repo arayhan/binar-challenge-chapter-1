@@ -1,13 +1,16 @@
-import { getAllMovies } from '@/store/movie/movie.actions';
+import { getAllMovies, searchMovies, setSearchQuery } from '@/store/movie/movie.actions';
 import React from 'react';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Home = () => {
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const { payload, isLoading } = useSelector((state) => state.movie);
+
+	const handleSearch = () => searchMovies();
 
 	useEffect(() => {
 		dispatch(getAllMovies());
@@ -29,6 +32,13 @@ export const Home = () => {
 							pariatur dolor sunt nulla incidunt laudantium praesentium? Facere sequi repellat minus, distinctio
 							similique provident voluptates.
 						</div>
+					</div>
+					<hr className="my-6" />
+					<div className="space-x-3 flex items-center justify-center">
+						<input className="w-1/2 rounded-md" type="search" onChange={(e) => setSearchQuery(e.target.value)} />
+						<button onClick={handleSearch} className="bg-slate-800 hover:bg-slate-600 text-white px-6 py-2 rounded-md">
+							Search
+						</button>
 					</div>
 					<hr className="my-6" />
 					{isLoading && <div>Loading...</div>}

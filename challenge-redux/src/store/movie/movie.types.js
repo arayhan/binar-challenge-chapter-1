@@ -1,1 +1,4 @@
 export const GET_ALL_MOVIES = 'GET_ALL_MOVIES';
+
+export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';
+export const SEARCH_MOVIES = 'SEARCH_MOVIES';
