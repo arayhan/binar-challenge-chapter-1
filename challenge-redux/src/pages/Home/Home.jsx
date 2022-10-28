@@ -1,33 +1,48 @@
+import { getAllMovies } from '@/store/movie/movie.actions';
 import React from 'react';
-import { logo } from '@/images';
-import styles from './Home.module.scss';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const Home = () => {
-	return (
-		<div className={styles.container}>
-			<div className={styles.content}>
-				<div className={styles.header}>
-					<h1 className={styles.title}>React Tailwind Boilerplate</h1>
-					<div className={styles.author}>
-						By <span>Ahmed Rayhan Primadedas</span>
-					</div>
-				</div>
-				<div className={styles.stack}>
-					<img className={[styles.iconReact]} src={logo} alt="react" />
-					<img
-						className={styles.iconTailwind}
-						src="https://seeklogo.com/images/T/tailwind-css-logo-5AD4175897-seeklogo.com.png"
-						alt="tailwindcss"
-					/>
-				</div>
-				<div className={styles.cta}>
-					<button type="button">Get Started</button>
-				</div>
-			</div>
+	const dispatch = useDispatch();
 
-			<div className={styles.footer}>
-				<div className={styles.copyright}>&copy; 2022 Ahmed Rayhan Primadedas</div>
-			</div>
-		</div>
+	const { payload, isLoading } = useSelector((state) => state.movie);
+
+	useEffect(() => {
+		dispatch(getAllMovies());
+	}, [dispatch]);
+
+	return (
+		<main>
+			<section className="bg-slate-800">
+				<div className="container py-28">
+					<h1 className="text-white text-4xl font-bold">Redux Challenge</h1>
+				</div>
+			</section>
+			<section>
+				<div className="container py-12">
+					<div className="text-center space-y-3">
+						<h1 className="font-bold text-2xl">Products</h1>
+						<div className="text-sm">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere fugit soluta culpa iure molestiae quos,
+							pariatur dolor sunt nulla incidunt laudantium praesentium? Facere sequi repellat minus, distinctio
+							similique provident voluptates.
+						</div>
+					</div>
+					<hr className="my-6" />
+					{isLoading && <div>Loading...</div>}
+					{!isLoading && payload && payload.total_results > 0 && (
+						<div className="text-center flex flex-col space-y-3">
+							{payload.results.map((movie) => (
+								<Link key={movie.id} className="text-blue-500 hover:text-blue-700" to={`/movie/${movie.id}`}>
+									{movie.title}
+								</Link>
+							))}
+						</div>
+					)}
+				</div>
+			</section>
+		</main>
 	);
 };
